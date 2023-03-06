@@ -1,0 +1,43 @@
+{
+  "name": "justintime50/vcr-accessories",
+  "description": "Various accessories for your PHP VCR",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Justintime50",
+      "email": "39606064+Justintime50@users.noreply.github.com"
+    }
+  ],
+  "scripts": {
+    "coverage": "XDEBUG_MODE=coverage ./bin/phpunit --coverage-html clover.html --coverage-clover build/logs/clover.xml && ./bin/coverage-check build/logs/clover.xml 5 --only-percentage",
+    "fix": "./bin/phpcbf --standard=./vendor/justintime50/styles/src/php/phpcs.xml .",
+    "lint": "./bin/phpcs --standard=./vendor/justintime50/styles/src/php/phpcs.xml .",
+    "test": "./bin/phpunit"
+  },
+  "require": {
+    "php": "^8.0",
+    "allejo/php-vcr-sanitizer": "^1.1",
+    "php-vcr/php-vcr": "^1.5"
+  },
+  "require-dev": {
+    "justintime50/styles": "^0.1.0",
+    "php-coveralls/php-coveralls": "^2.5",
+    "phpunit/phpunit": "^10.0",
+    "rregeer/phpunit-coverage-check": "^0.3.1",
+    "squizlabs/php_codesniffer": "^3.7"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "autoload": {
+    "psr-4": {
+      "VCRAccessories\\": "src/VCRAccessories/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "VCR\\Tests\\": "tests/VCRAccessories/"
+    }
+  }
+}

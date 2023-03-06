@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+.phpunit.cache
+bin
+build
+clover.html
+composer.lock
+vendor
