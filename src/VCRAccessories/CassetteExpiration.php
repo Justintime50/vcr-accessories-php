@@ -2,21 +2,21 @@
 
 namespace VCRAccessories;
 
+const SECONDS_IN_DAY = 86400;
+
 class CassetteExpiration
 {
     /**
      * Checks for an expired cassette and warns if it is too old and must be re-recorded.
      *
-     * @param string $cassettePath
+     * @param int $expirationDays
+     * @param string $fullCassettePath
+     * @param bool $error
      * @return void
      */
-    public static function checkExpiredCassette(string $cassettePath): void
+    public static function checkExpiredCassette(int $expirationDays, string $fullCassettePath, bool $error = false): void
     {
-        // TODO: Make these configurable
-        $fullCassettePath = "test/cassettes/$cassettePath";
-        $secondsInDay = 86400;
-        $expirationDays = 180;
-        $expirationSeconds = $secondsInDay * $expirationDays;
+        $expirationSeconds = SECONDS_IN_DAY * $expirationDays;
 
         if (file_exists($fullCassettePath)) {
             $cassetteTimestamp = filemtime($fullCassettePath);
@@ -24,8 +24,13 @@ class CassetteExpiration
             $currentTimestamp = time();
 
             if ($currentTimestamp > $expirationTimestamp) {
-                // TODO: allow for errors on expiration in addition to default warnings
-                error_log("$fullCassettePath is older than $expirationDays days and has expired. Please re-record the cassette.");
+                $message = "$fullCassettePath is older than $expirationDays days and has expired. Please re-record the cassette.";
+
+                if ($error === true) {
+                    throw new CassetteExpirationException($message);
+                } else {
+                    error_log($message);
+                }
             }
         }
     }

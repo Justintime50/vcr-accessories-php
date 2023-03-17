@@ -31,13 +31,18 @@ class CassetteSetup
     /**
      * Inserts a cassette for use in tests and checks if it's expired.
      *
-     * @param string $cassettePath
+     * @param string $fullCassettePath
+     * @param int|null $expirationDays
+     * @param bool $expirationError
      * @return void
      */
-    public static function setupCassette(string $cassettePath): void
+    public static function setupCassette(string $fullCassettePath, int|null $expirationDays = null, $expirationError = false): void
     {
-        CassetteExpiration::checkExpiredCassette($cassettePath);
-        VCR::insertCassette($cassettePath);
+        if (isset($expirationDays)) {
+            CassetteExpiration::checkExpiredCassette($expirationDays, $fullCassettePath, $expirationError);
+        }
+
+        VCR::insertCassette($fullCassettePath);
     }
 
     /**
