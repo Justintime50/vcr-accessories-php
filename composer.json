@@ -1,6 +1,7 @@
 {
   "name": "justintime50/vcr-accessories",
   "description": "Various accessories for your PHP VCR",
+  "version": "0.1.0",
   "type": "library",
   "license": "MIT",
   "authors": [

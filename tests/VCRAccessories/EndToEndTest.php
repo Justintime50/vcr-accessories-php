@@ -8,19 +8,19 @@ use VCRAccessories\CassetteSetup;
 class EndToEndTest extends TestCase
 {
     /**
-     * Tests that we setup and use a cassette with the bare minumum config.
+     * Tests that we setup, use, scrub, and expire a cassette with the bare minumum config.
      *
      * @return void
      */
-    public function testSetupCassetteBasicUsage()
+    public function testAllAccessories()
     {
         CassetteSetup::setupVcrTests();
 
-        CassetteSetup::setupCassette('setupCassetteBasicUsage.yaml');
+        CassetteSetup::setupCassette('allAccessories.yaml', 180);
 
         $client = new \GuzzleHttp\Client();
-        $response = $client->get('https://example.com');
-        $responseContents = $response->getBody();
+        $response = $client->request('GET', 'https://httpbin.org/get', ['headers' => ['Accept' => 'application/json']]);
+        $responseContents = json_decode($response->getBody(), true);
 
         $this->assertNotNull($responseContents);
 

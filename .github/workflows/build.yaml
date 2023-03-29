@@ -11,7 +11,7 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.1"
+          php-version: '8.1'
       - name: Install Composer
         run: composer self-update
       - name: Install Dependencies
@@ -23,7 +23,7 @@ jobs:
     strategy:
       matrix:
         # TODO: Segmentation faults happen on PHP 8.2 due to a bug in PHP VCR
-        php-version: ["8.0", "8.1"]
+        php-version: ['8.0', '8.1']
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
