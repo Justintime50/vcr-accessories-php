@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.2.0 (2023-03-29)
+
+- Gets the VCR cassette directory from VCR instead of needing it from the user, fixes a bug where this would double nest directories when supplied by the user
+
 ## v0.1.0 (2023-03-29)
 
 - Initial release

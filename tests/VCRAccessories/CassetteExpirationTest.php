@@ -18,7 +18,7 @@ class CassetteExpirationTest extends TestCase
     {
         CassetteSetup::setupVcrTests();
 
-        CassetteSetup::setupCassette(CASSETTE_DIR . '/cassetteExpirationWarning.yaml', 0, false);
+        CassetteSetup::setupCassette('cassetteExpirationWarning.yaml', 0, false);
 
         $client = new \GuzzleHttp\Client();
         $client->request('GET', 'https://httpbin.org/get', ['headers' => ['Accept' => 'application/json']]);

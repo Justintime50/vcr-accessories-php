@@ -84,7 +84,7 @@ public function myTest()
     // 1. Pass the full path of the cassette (required)
     // 2. Pass an optional number of days to expire this cassette after
     // 3. Pass true if you want to error on expired cassettes instead of error
-    CassetteSetup::setupCassette(CASSETTE_DIR . 'nameOfCassette.yaml', 180, true);
+    CassetteSetup::setupCassette('nameOfCassette.yaml', 180, true);
 
     // Your test here
 }

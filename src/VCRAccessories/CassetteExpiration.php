@@ -2,6 +2,8 @@
 
 namespace VCRAccessories;
 
+use VCR\VCR;
+
 const SECONDS_IN_DAY = 86400;
 
 class CassetteExpiration
@@ -9,14 +11,15 @@ class CassetteExpiration
     /**
      * Checks for an expired cassette and warns if it is too old and must be re-recorded.
      *
-     * @param string $fullCassettePath
+     * @param string $cassetteName
      * @param int $expirationDays
      * @param bool $error
      * @return void
      */
-    public static function checkExpiredCassette(string $fullCassettePath, int $expirationDays, bool $error = false): void
+    public static function checkExpiredCassette(string $cassetteName, int $expirationDays, bool $error = false): void
     {
         $expirationSeconds = SECONDS_IN_DAY * $expirationDays;
+        $fullCassettePath = VCR::configure()->getCassettePath() . '/' . $cassetteName;
 
         if (file_exists($fullCassettePath)) {
             $cassetteTimestamp = filemtime($fullCassettePath);

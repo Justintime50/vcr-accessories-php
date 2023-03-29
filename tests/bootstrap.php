@@ -14,9 +14,9 @@ VCR::configure()->setCassettePath(CASSETTE_DIR)
     ->setWhiteList(['vendor/guzzle']);
 
 const REDACTED_STRING = '<REDACTED>';
-const SCRUBBERS = [
+define('SCRUBBERS', [
     ['origin', REDACTED_STRING],
-];
+]);
 
 VCRCleaner::enable([
     'response' => [
