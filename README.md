@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/Justintime50/vcr-accessories-php/badge.svg?branch=main)](https://coveralls.io/github/Justintime50/vcr-accessories-php?branch=main)
 [![Licence](https://img.shields.io/github/license/justintime50/vcr-accessories-php)](LICENSE)
 
-Various tools and accessories for your [PHP VCR](https://github.com/php-vcr/php-vcr)
+Various tools and accessories for your [PHP VCR](https://github.com/php-vcr/php-vcr).
 
 When working with VCR solutions, I'm often finding I need a few extra "accessories" to get them working the way I want. This package includes the following:
 
@@ -12,6 +12,16 @@ When working with VCR solutions, I'm often finding I need a few extra "accessori
 - Expire and warn or error on stale cassettes
 - Setup a cassette directory
 - Setup and teardown VCR tests
+
+## Install
+
+```shell
+# Install in your project
+composer require --dev justintime50/vcr-accessories
+
+# Install locally
+composer install
+```
 
 ## Usage
 
