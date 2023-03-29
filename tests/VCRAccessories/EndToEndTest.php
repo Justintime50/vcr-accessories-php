@@ -16,7 +16,7 @@ class EndToEndTest extends TestCase
     {
         CassetteSetup::setupVcrTests();
 
-        CassetteSetup::setupCassette('allAccessories.yaml', 180);
+        CassetteSetup::setupCassette(CASSETTE_DIR . '/allAccessories.yaml', 180, true);
 
         $client = new \GuzzleHttp\Client();
         $response = $client->request('GET', 'https://httpbin.org/get', ['headers' => ['Accept' => 'application/json']]);

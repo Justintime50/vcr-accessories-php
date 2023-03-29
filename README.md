@@ -45,9 +45,9 @@ const REDACTED_STRING = '<REDACTED>';
 
 // SCRUBBERS must be a multidimensional array where the first index of each nested array is the key
 // you want to scrub and the second index is what you want it to be replaced with before persisting to disk
-const SCRUBBERS = [
+define('SCRUBBERS', [
     ['origin', REDACTED_STRING],
-];
+]);
 
 VCRCleaner::enable([
     'response' => [
@@ -81,10 +81,10 @@ public static function tearDownAfterClass(): void
 
 public function myTest()
 {
-    // 1. Pass the name of the cassette (required)
+    // 1. Pass the full path of the cassette (required)
     // 2. Pass an optional number of days to expire this cassette after
     // 3. Pass true if you want to error on expired cassettes instead of error
-    CassetteSetup::setupCassette('nameOfCassette.yaml', 180, true);
+    CassetteSetup::setupCassette(CASSETTE_DIR . 'nameOfCassette.yaml', 180, true);
 
     // Your test here
 }

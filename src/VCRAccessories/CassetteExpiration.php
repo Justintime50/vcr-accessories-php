@@ -9,12 +9,12 @@ class CassetteExpiration
     /**
      * Checks for an expired cassette and warns if it is too old and must be re-recorded.
      *
-     * @param int $expirationDays
      * @param string $fullCassettePath
+     * @param int $expirationDays
      * @param bool $error
      * @return void
      */
-    public static function checkExpiredCassette(int $expirationDays, string $fullCassettePath, bool $error = false): void
+    public static function checkExpiredCassette(string $fullCassettePath, int $expirationDays, bool $error = false): void
     {
         $expirationSeconds = SECONDS_IN_DAY * $expirationDays;
 

@@ -39,7 +39,7 @@ class CassetteSetup
     public static function setupCassette(string $fullCassettePath, int|null $expirationDays = null, $expirationError = false): void
     {
         if (isset($expirationDays)) {
-            CassetteExpiration::checkExpiredCassette($expirationDays, $fullCassettePath, $expirationError);
+            CassetteExpiration::checkExpiredCassette($fullCassettePath, $expirationDays, $expirationError);
         }
 
         VCR::insertCassette($fullCassettePath);
