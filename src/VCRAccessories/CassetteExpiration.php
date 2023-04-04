@@ -27,7 +27,7 @@ class CassetteExpiration
             $currentTimestamp = time();
 
             if ($currentTimestamp > $expirationTimestamp) {
-                $message = "$fullCassettePath is older than $expirationDays days and has expired. Please re-record the cassette.";
+                $message = "$fullCassettePath is older than $expirationDays days and has expired. Please re-record the cassette."; // phpcs:ignore
 
                 if ($error === true) {
                     throw new CassetteExpirationException($message);

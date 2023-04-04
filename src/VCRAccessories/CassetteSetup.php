@@ -36,8 +36,11 @@ class CassetteSetup
      * @param bool $expirationError
      * @return void
      */
-    public static function setupCassette(string $cassetteName, int|null $expirationDays = null, $expirationError = false): void
-    {
+    public static function setupCassette(
+        string $cassetteName,
+        int|null $expirationDays = null,
+        $expirationError = false
+    ): void {
         if (isset($expirationDays)) {
             CassetteExpiration::checkExpiredCassette($cassetteName, $expirationDays, $expirationError);
         }

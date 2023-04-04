@@ -21,7 +21,7 @@
     "php-vcr/php-vcr": "^1.5"
   },
   "require-dev": {
-    "justintime50/styles": "^0.1.0",
+    "justintime50/styles": "^0.3.0",
     "php-coveralls/php-coveralls": "^2.5",
     "phpunit/phpunit": "^9.0",
     "rregeer/phpunit-coverage-check": "^0.3.1",
