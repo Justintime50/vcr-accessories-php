@@ -62,10 +62,10 @@ class CassetteScrubber
      * PHP treats JSON objects (associative arrays) and lists (sequential arrays) as the
      * same thing (array), this function is used to determine what kind of array something is.
      *
-     * @param array $array
+     * @param mixed $array
      * @return bool
      */
-    protected static function isList(array $array): bool
+    protected static function isList(mixed $array): bool
     {
         if (!is_array($array)) {
             return false;
