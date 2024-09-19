@@ -7,7 +7,7 @@ class CassetteScrubber
     /**
      * Scrub sensitive information from cassette files prior to persisting them to disk.
      *
-     * @param array $scrubbers
+     * @param array<array{string, mixed}> $scrubbers
      * @param mixed $data
      * @return mixed
      */
@@ -20,12 +20,12 @@ class CassetteScrubber
 
                 // Root-level list scrubbing
                 if (self::isList($data)) {
-                    foreach ($data as $index => $item) {
-                        if (is_array($index)) {
-                            if (is_array($item)) {
-                                if (array_key_exists($key, $item)) {
-                                    $data[$index][$key] = $replacement;
-                                }
+                    foreach ($data as $index => $item) { // @phpstan-ignore foreach.nonIterable
+                        if (is_array($item)) {
+                            if (array_key_exists($key, $item)) {
+                                $data[$index][$key] = $replacement; // @phpstan-ignore-line
+                            } else {
+                                $data[$index] = self::scrubCassette($scrubbers, $item); // @phpstan-ignore-line
                             }
                         }
                     }

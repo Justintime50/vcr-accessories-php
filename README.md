@@ -81,10 +81,11 @@ public static function tearDownAfterClass(): void
 
 public function myTest()
 {
-    // 1. Pass the name of the cassette (required)
-    // 2. Pass an optional number of days to expire this cassette after
-    // 3. Pass true if you want to error on expired cassettes instead of error
-    CassetteSetup::setupCassette('nameOfCassette.yaml', 180, true);
+    CassetteSetup::setupCassette(
+        cassetteName: 'nameOfCassette.yaml', 
+        expirationDays: 180, 
+        expirationError: true
+    );
 
     // Your test here
 }
@@ -99,6 +100,7 @@ composer install
 # Lint
 composer lint
 composer fix
+composer phpstan
 
 # Test
 composer test

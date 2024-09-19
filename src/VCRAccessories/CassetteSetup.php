@@ -38,8 +38,8 @@ class CassetteSetup
      */
     public static function setupCassette(
         string $cassetteName,
-        int|null $expirationDays = null,
-        $expirationError = false
+        ?int $expirationDays = null,
+        bool $expirationError = false
     ): void {
         if (isset($expirationDays)) {
             CassetteExpiration::checkExpiredCassette($cassetteName, $expirationDays, $expirationError);

@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.3.0 (2024-09-19)
+
+- Bumps `php-vcr` from v1.5 to v1.7
+- Fixes a bug that wasn't scrubbing nested list values
+- Adds `phpstan` and fixes errors
+
 ## v0.2.1 (2023-09-01)
 
 - Fixes an incorrect type for the `array` parameter of `isList` which didn't allow for mixed types even though that's the purpose of the function

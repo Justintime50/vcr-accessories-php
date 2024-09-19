@@ -1,6 +1,6 @@
 <?php
 
-namespace VCRAccessories\Tests;
+namespace VCRAccessories\Tests\VCRAccessories;
 
 use PHPUnit\Framework\TestCase;
 use VCRAccessories\CassetteSetup;
