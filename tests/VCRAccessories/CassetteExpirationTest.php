@@ -21,7 +21,7 @@ class CassetteExpirationTest extends TestCase
         CassetteSetup::setupCassette('cassetteExpirationWarning.yaml', 0, false);
 
         $client = new \GuzzleHttp\Client();
-        $client->request('GET', 'https://httpbin.org/get', ['headers' => ['Accept' => 'application/json']]);
+        $client->request('GET', 'https://httpbingo.org/get', ['headers' => ['Accept' => 'application/json']]);
 
         // Sleep so that timestamps are off by a second
         sleep(1);
