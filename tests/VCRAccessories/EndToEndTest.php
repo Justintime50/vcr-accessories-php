@@ -19,7 +19,9 @@ class EndToEndTest extends TestCase
         CassetteSetup::setupCassette('allAccessories.yaml', 180, true);
 
         $client = new \GuzzleHttp\Client();
-        $response = $client->request('GET', 'https://httpbingo.org/get', ['headers' => ['Accept' => 'application/json']]);
+        $response = $client->request('GET', 'https://httpbingo.org/get', ['headers' => [
+            'Accept' => 'application/json'
+        ]]);
         $responseContents = json_decode($response->getBody(), true);
 
         $this->assertNotNull($responseContents);
