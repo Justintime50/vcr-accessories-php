@@ -1,7 +1,7 @@
 # VCR Accessories
 
 [![Build Status](https://github.com/Justintime50/vcr-accessories-php/workflows/build/badge.svg)](https://github.com/Justintime50/vcr-accessories-php/actions)
-[![Coverage Status](https://coveralls.io/repos/github/Justintime50/vcr-accessories-php/badge.svg?branch=main)](https://coveralls.io/github/Justintime50/vcr-accessories-php?branch=main)
+[![Coverage Status](https://img.shields.io/codecov/c/github/justintime50/vcr-accessories-php)](https://app.codecov.io/github/Justintime50/vcr-accessories-php)
 [![Licence](https://img.shields.io/github/license/justintime50/vcr-accessories-php)](LICENSE)
 
 Various tools and accessories for your [PHP VCR](https://github.com/php-vcr/php-vcr).
