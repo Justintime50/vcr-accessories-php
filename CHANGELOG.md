@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.4.0 (2025-12-30)
+
+- Adds support for PHP 8.4 and 8.5
+- Drops support for PHP 8.0
+- Bumps required php-vcr to 1.8.2
+
 ## v0.3.0 (2024-09-19)
 
 - Bumps `php-vcr` from v1.5 to v1.7
