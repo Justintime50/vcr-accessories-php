@@ -2,6 +2,7 @@
 
 [![Build Status](https://github.com/Justintime50/vcr-accessories-php/workflows/build/badge.svg)](https://github.com/Justintime50/vcr-accessories-php/actions)
 [![Coverage Status](https://img.shields.io/codecov/c/github/justintime50/vcr-accessories-php)](https://app.codecov.io/github/Justintime50/vcr-accessories-php)
+[![Version](https://img.shields.io/github/v/tag/justintime50/vcr-accessories-php)](https://github.com/justintime50/vcr-accessories-php/releases)
 [![Licence](https://img.shields.io/github/license/justintime50/vcr-accessories-php)](LICENSE)
 
 Various tools and accessories for your [PHP VCR](https://github.com/php-vcr/php-vcr).
