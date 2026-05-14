@@ -1,0 +1,8 @@
+.gitattributes export-ignore
+.github        export-ignore
+.gitignore     export-ignore
+*.cache        export-ignore
+bin/           export-ignore
+phpstan.neon   export-ignore
+phpunit.xml    export-ignore
+tests/         export-ignore
